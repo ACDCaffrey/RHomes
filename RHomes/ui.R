@@ -4,6 +4,8 @@ library(magrittr)
 library(shiny)
 library(shinydashboard)
 
+library(leaflet)
+
 # header ------------------------------------------------------------------
 
 header <- dashboardHeader(title = "RHouses UK")
@@ -56,9 +58,14 @@ body <- dashboardBody(
     # tab item 1 - File Select --------------------------------------------------------------------
     tabItem(tabName = "homemap",
             
-            fluidRow(align = "center",
-                     
-            )
+      fluidRow(align = 'center',
+                 
+        box(
+          width = 10,
+          leafletOutput("ukmap", height = 640)  
+          
+        )
+      )     
     )
   )
 )
