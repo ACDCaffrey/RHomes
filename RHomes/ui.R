@@ -58,32 +58,14 @@ body <- dashboardBody(
     # tab item 1 - File Select --------------------------------------------------------------------
     tabItem(tabName = "homemap",
             
-            sidebarLayout(
-              
-              sidebarPanel(
-                
-                actionButton("load_data", label = "Load API"),
-                
-                selectInput("select_map", label = "Select Map", 
-                            choices = list("A" = providers$Stamen.TonerLite, 
-                                           "B" = providers$Esri.WorldImagery), 
-                            selected = 1),
-                
-                textInput("map_search", label = "Postcode/County", val = ""),
-                
-                actionButton("render_map", label = "Render Map")
-                
-              ),
-              
-              mainPanel(
-                box(
-                  width = 12,
-                  leafletOutput("ukmap", height = 640)  
-                )
-              )
-              
-            )
-            
+      fluidRow(align = 'center',
+                 
+        box(
+          width = 10,
+          leafletOutput("ukmap", height = 640)  
+          
+        )
+      )     
     )
   )
 )
