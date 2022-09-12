@@ -1,10 +1,10 @@
 rm(list = ls()) # remove all current variables
 
-library(magrittr)
 library(shiny)
 library(shinydashboard)
 
 library(leaflet)
+library(magrittr)
 
 # header ------------------------------------------------------------------
 
